@@ -1,0 +1,58 @@
+Garen 5	19
+Nami 7	23
+Nunu 2	21
+Nidalee 5	17
+Diana 4	22
+Lux 8	25
+Lulu 2	23
+LeeSin 8	14
+Riven 13	15
+Lissandra 4	25
+Lillia 13	23
+Maokai 2	21
+Morgana 7	25
+Vi 5	21
+Veigar 2	23
+Vayne 13	17
+Sylas 4	21
+Seguani 12	19
+Sett 10	21
+Shen 3	20	24
+XinZhao 5	14
+Thresh 13	19
+Ahri 9	23
+Azir 5	15	26
+Akali 3	22
+Aatrox 1	19
+Aphelios 4	18
+Annie 12	23
+Ashe 2	18
+Yasuo 11	14
+Elise 1	15
+Wukong 8	19
+Yone 11	24
+Warwick 8	18	21
+Yuumi 9	20
+Irelia 7	8	24
+Evelynn 1	16
+Ezreal 2	25
+JarvanIV 5	15
+Janna 7	20
+Jax 8	14
+Zed 3	16
+Jhin 1	17
+Zilean 1	20
+Jinx 12	 17
+Cassiopeia 13	20
+Katarina 5	12	22
+Kalista 1	14
+Kennen 3	15
+Kayn 6	16
+Kindred 9	18
+Talon 7	22
+Tahmkench 12	21
+TwistedFate 1	23
+Teemo 9	17
+Pyke 1	22
+Fiora 7	14
+Hecarim 2	19
