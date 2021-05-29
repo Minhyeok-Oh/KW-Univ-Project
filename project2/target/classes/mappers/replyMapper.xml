@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project2.mappers.reply">
+	<!-- comment list for post number -->
+	<select id="replyList" parameterType="com.project2.domain.ReplyVO" resultType="com.project2.domain.ReplyVO">
+		select
+		bno, rno, passwd, content,
+		writer, regDate
+		from market_reply
+		where
+		bno = #{bno}
+	</select>
+	<!-- the number of comment -->
+	<select id="replyCount" parameterType="int" resultType="int">
+		select count(rno) from
+		market_reply
+		where bno =#{bno}
+	</select>
+	<!-- write comment -->
+	<insert id="writeReply" parameterType="com.project2.domain.ReplyVO">
+		insert into market_reply(bno,passwd,content,writer)
+		values(#{bno}, #{passwd}, #{content}, #{writer})
+	</insert>
+	<!-- view comment for comment number -->
+	<select id="viewReply" parameterType="int"
+		resultType="com.project2.domain.ReplyVO">
+		select
+		rno, passwd, content, writer
+		from market_reply
+		where
+		rno = #{rno}
+	</select>
+	<!-- delete comment for comment number -->
+	<select id="deleteReply" parameterType="int">
+		delete
+		from market_reply
+		where
+		rno = #{rno}
+	</select>
+
+</mapper>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project2.mappers.board">
+	<!-- post list for category -->
+	<select id="list" parameterType="com.project2.domain.BoardVO" resultType="com.project2.domain.BoardVO">
+		select
+		bno, state, category, price,
+		description, regDate, writer, passwd, viewCnt
+		from market_board
+		where
+		category = #{category}
+		order by bno desc
+		limit #{price}, #{state}
+	</select>
+	<!-- post write -->
+	<insert id="write" parameterType="com.project2.domain.BoardVO">
+		insert into
+		market_board(state,category,price,description,writer, passwd)
+		values(#{state}, #{category}, #{price},#{description}, #{writer},
+		#{passwd})
+		<selectKey resultType="int" keyProperty="bno" order="AFTER">
+			select LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+	<!-- post view -->
+	<select id="view" parameterType="int"
+		resultType="com.project2.domain.BoardVO">
+		select
+		bno, state, category, price,
+		description, regDate,
+		writer, passwd, viewCnt
+		from market_board
+		where
+		bno = #{bno}
+	</select>
+	<!-- modify post -->
+	<update id="modify" parameterType="com.project2.domain.BoardVO">
+		update market_board
+		set
+		state =
+		#{state},
+		category = #{category},
+		price = #{price},
+		description =
+		#{description},
+		writer = #{writer},
+		passwd = #{passwd},
+		regDate = now()
+		where bno = #{bno}
+	</update>
+	<!-- delete post -->
+	<delete id="delete" parameterType="int">
+		delete
+		from market_board
+		where
+		bno = #{bno}
+	</delete>
+	<!-- the number of post -->
+	<select id="count" resultType="int">
+		select count(bno) from
+		market_board
+	</select>
+	<!-- the number of post for category -->
+	<select id="countCate" parameterType="String" resultType="int">
+		select count(bno) from
+		market_board
+		where
+		category = #{category}
+	</select>
+	<!-- post list -->
+	<select id="listPage" parameterType="hashMap"
+		resultType="com.project2.domain.BoardVO">
+		select
+		bno, state, category, price,
+		description, regDate,
+		writer, passwd, viewCnt
+		from market_board
+		order by bno desc
+		limit #{displayPost}, #{postNum}
+	</select>
+	<!-- update view count -->
+	<update id="updateviewCnt" parameterType="int">
+		update market_board
+		set viewCnt = viewCnt + 1
+		where bno = #{bno}
+	</update>
+	<!-- insert file information -->
+	<insert id="insertFile" parameterType="hashMap">
+		insert into market_file(
+			bno, org_file_name, stored_file_name, file_size
+		)
+		values(#{bno}, #{org_file_name}, #{stored_file_name}, #{file_size})
+	</insert>
+	<!-- get file information -->
+	<select id="selectFile" parameterType="int" resultType="hashMap">
+		select bno, file_no, org_file_name, stored_file_name
+		from market_file
+		where bno = #{bno}
+		and del = 'N'
+	</select>
+	<!-- delete file information for post number -->
+	<delete id="deleteFile" parameterType="int">
+		delete
+		from market_file
+		where
+		bno = #{bno}
+	</delete>
+</mapper>
