@@ -1,0 +1,22 @@
+CATEGORY	MENU	PRICE
+COFFEE	Americano	4200
+SMOOTHIE	StrawberrySmoothie
+SMOOTHIE	ChocoSmoothie	4800
+SMOOTHIE	ChocoSmoothie	4800
+COFFEE	CaramelMacchiato	4900
+TEA	JasmineTea	4700
+ADE	GrapefruitAde	5500
+ADE	StrawberryAde	5700
+SMOOTHIE	MangoSmoothie	5000
+DESSERT	Brownie	2500
+SMOOTHIE	GreenteaSmoothie	5400
+SMOOTHIE	YogurtSmoothie	4900
+DESSERT	Macaroon	2500
+COFFEE	Espresso	4000
+DESSERT	Bagel	3000
+TEA	LimeTea	5600
+TEA	EarlgrayBlackTea	3500
+DESSERT	HoneyBread	5000
+TEA	GrapefruitTea	4800
+ADE	LemonAde	5500
+ADE	OrangeAde	5500
